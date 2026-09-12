@@ -2,16 +2,35 @@ import type { Technology } from "../types";
 
 type StackProps = {
   selectedTechnologies: Technology[];
+  onRemove: (id: number) => void;
+  onRemoveAll: () => void;
 };
 
-function Stack({ selectedTechnologies }: StackProps) {
+function Stack({
+  selectedTechnologies,
+  onRemove,
+  onRemoveAll,
+}: StackProps) {
   return (
     <aside className="stack">
-      <h2>Your Stack</h2>
+      <div className="stack-header">
+        <div>
+          <h2>Your Stack</h2>
 
-      <p className="stack-subtitle">
-        {selectedTechnologies.length} technologies selected.
-      </p>
+          <p className="stack-subtitle">
+            {selectedTechnologies.length} technologies selected.
+          </p>
+        </div>
+
+        {selectedTechnologies.length > 0 && (
+          <button
+            className="remove-all-button"
+            onClick={onRemoveAll}
+          >
+            Remove All
+          </button>
+        )}
+      </div>
 
       {selectedTechnologies.length === 0 ? (
         <div className="empty-stack">
@@ -20,7 +39,10 @@ function Stack({ selectedTechnologies }: StackProps) {
       ) : (
         <div className="stack-items">
           {selectedTechnologies.map((technology) => (
-            <div className="stack-item" key={technology.id}>
+            <div
+              className="stack-item"
+              key={technology.id}
+            >
               <span className="stack-item-icon">
                 {technology.icon}
               </span>
@@ -29,6 +51,14 @@ function Stack({ selectedTechnologies }: StackProps) {
                 <strong>{technology.name}</strong>
                 <span>{technology.category}</span>
               </div>
+
+              <button
+                className="remove-button"
+                onClick={() => onRemove(technology.id)}
+                aria-label={`Remove ${technology.name}`}
+              >
+                ×
+              </button>
             </div>
           ))}
         </div>

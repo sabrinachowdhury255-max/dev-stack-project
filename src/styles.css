@@ -822,3 +822,96 @@ input {
 .add-stack-button.added:hover {
   background: #e9edf2;
 }
+/* =========================
+   Stack Header
+========================= */
+
+.stack-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.stack-header h2 {
+  margin-bottom: 5px;
+}
+
+
+/* =========================
+   Remove All
+========================= */
+
+.remove-all-button {
+  padding: 4px 7px;
+
+  border: none;
+  border-radius: 4px;
+
+  background: #fff1f2;
+  color: #ef4444;
+
+  font-size: 8px;
+  cursor: pointer;
+}
+
+.remove-all-button:hover {
+  background: #ffe4e6;
+}
+
+
+/* =========================
+   Stack Item
+========================= */
+
+.stack-item {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 7px;
+  padding-right: 24px;
+
+  border: 1px solid #edf1f5;
+  border-radius: 8px;
+
+  background: #ffffff;
+}
+
+
+/* =========================
+   Remove Button
+========================= */
+
+.remove-button {
+  position: absolute;
+  top: 50%;
+  right: 7px;
+
+  width: 17px;
+  height: 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: translateY(-50%);
+
+  border: none;
+  background: transparent;
+
+  color: #9aa6b6;
+
+  font-size: 15px;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.remove-button:hover {
+  color: #ef4444;
+}

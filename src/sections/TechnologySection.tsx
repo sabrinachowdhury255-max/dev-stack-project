@@ -34,6 +34,18 @@ function TechnologySection() {
     ]);
   }
 
+  function handleRemove(id: number) {
+    setSelectedTechnologies(
+      selectedTechnologies.filter(
+        (technology) => technology.id !== id
+      )
+    );
+  }
+
+  function handleRemoveAll() {
+    setSelectedTechnologies([]);
+  }
+
   return (
     <section className="technology-section" id="technologies">
       <div className="section-heading">
@@ -64,7 +76,11 @@ function TechnologySection() {
             ))}
           </div>
 
-          <Stack selectedTechnologies={selectedTechnologies} />
+          <Stack
+            selectedTechnologies={selectedTechnologies}
+            onRemove={handleRemove}
+            onRemoveAll={handleRemoveAll}
+          />
         </div>
       )}
     </section>
