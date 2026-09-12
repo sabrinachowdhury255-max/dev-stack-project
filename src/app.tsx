@@ -1,14 +1,11 @@
 import Header from "./components/Header";
+import Banner from "./sections/Banner";
 
 function App() {
   return (
     <>
       <Header />
-
-      <main>
-        <h1>Dev Stack</h1>
-        <p>Dev Stack Builder Website</p>
-      </main>
+      <Banner />
     </>
   );
 }

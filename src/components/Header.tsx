@@ -1,4 +1,25 @@
+type NavLinkProps = {
+  text: string;
+  href: string;
+};
+
+function NavLink({ text, href }: NavLinkProps) {
+  return (
+    <a href={href} className="navigation-link">
+      {text}
+    </a>
+  );
+}
+
 function Header() {
+  const navigationLinks = [
+    { text: "Home", href: "#home" },
+    { text: "Technologies", href: "#technologies" },
+    { text: "Projects", href: "#projects" },
+    { text: "About", href: "#about" },
+    { text: "Contact", href: "#contact" },
+  ];
+
   return (
     <header className="header">
       <div className="logo">
@@ -7,11 +28,13 @@ function Header() {
       </div>
 
       <nav className="navigation">
-        <a href="#home">Home</a>
-        <a href="#technologies">Technologies</a>
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        {navigationLinks.map((link) => (
+          <NavLink
+            key={link.href}
+            text={link.text}
+            href={link.href}
+          />
+        ))}
       </nav>
 
       <div className="auth-buttons">
