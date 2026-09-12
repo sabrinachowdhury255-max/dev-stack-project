@@ -50,8 +50,9 @@ input {
   align-items: center;
   gap: 10px;
 
+  color: #111827;
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .logo span:first-child {
@@ -61,13 +62,15 @@ input {
 
 .navigation {
   display: flex;
+  align-items: center;
   gap: 30px;
 }
 
 .navigation-link {
-  text-decoration: none;
   color: #374151;
-  font-size: 15px;
+  text-decoration: none;
+  font-size: 14px;
+
   transition: color 0.2s ease;
 }
 
@@ -77,14 +80,17 @@ input {
 
 .auth-buttons {
   display: flex;
+  align-items: center;
   gap: 10px;
 }
 
 .auth-buttons button {
-  padding: 9px 18px;
+  padding: 8px 17px;
+
   border-radius: 6px;
+
+  font-size: 13px;
   cursor: pointer;
-  font-size: 14px;
 }
 
 .sign-in {
@@ -106,25 +112,29 @@ input {
 
 .banner {
   min-height: 500px;
-  padding: 80px 60px;
+  padding: 75px 60px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   gap: 50px;
-  background: #f9fafb;
+
+  background: #f8fafc;
 }
 
 .banner-content {
-  max-width: 600px;
+  max-width: 590px;
 }
 
 .banner-content h1 {
-  font-size: 52px;
-  line-height: 1.1;
-  color: #111827;
   margin-bottom: 20px;
+
+  color: #111827;
+
+  font-size: 50px;
+  line-height: 1.1;
+  font-weight: 700;
 }
 
 .banner-content h1 span {
@@ -142,27 +152,32 @@ input {
 }
 
 .banner-content p {
-  font-size: 18px;
-  line-height: 1.6;
+  max-width: 540px;
+  margin-bottom: 28px;
+
   color: #6b7280;
-  margin-bottom: 30px;
+
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .banner-buttons {
   display: flex;
-  gap: 15px;
+  align-items: center;
+  gap: 13px;
 }
 
 .banner-buttons button {
-  padding: 12px 22px;
+  padding: 11px 21px;
+
   border-radius: 7px;
-  font-size: 15px;
+
+  font-size: 14px;
   cursor: pointer;
 }
 
 .explore-button {
   border: none;
-  color: #ffffff;
 
   background: linear-gradient(
     90deg,
@@ -170,10 +185,13 @@ input {
     #ec4899,
     #8b5cf6
   );
+
+  color: #ffffff;
 }
 
 .learn-button {
   border: 1px solid #f97316;
+
   background: #ffffff;
   color: #f97316;
 }
@@ -196,32 +214,274 @@ input {
 }
 
 .code-box {
-  padding: 35px;
+  padding: 32px;
 
   border: 1px solid #374151;
   border-radius: 10px;
 
   color: #f97316;
+
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 
 /* =========================
-   Responsive Navbar
+   Technology Section
 ========================= */
 
-@media (max-width: 900px) {
+.technology-section {
+  padding: 55px 60px 70px;
+  background: #ffffff;
+}
+
+.section-heading {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.section-heading h2 {
+  margin-bottom: 8px;
+
+  color: #111827;
+
+  font-size: 31px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.section-heading p {
+  color: #7a8799;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+/* =========================
+   Technology Grid
+========================= */
+
+.technology-grid {
+  max-width: 1170px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 17px;
+}
+
+
+/* =========================
+   Technology Card
+========================= */
+
+.tech-card {
+  min-height: 240px;
+  padding: 16px 17px;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #ffffff;
+
+  border: 1px solid #e7edf4;
+  border-radius: 14px;
+
+  box-shadow: 0 2px 7px rgba(15, 23, 42, 0.025);
+}
+
+
+/* =========================
+   Card Header
+========================= */
+
+.tech-card-header {
+  width: 100%;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  margin-bottom: 13px;
+}
+
+.tech-logo {
+  width: 31px;
+  height: 31px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 24px;
+  line-height: 1;
+}
+
+
+/* =========================
+   Card Badge / Sticker
+========================= */
+
+.tech-badge {
+  padding: 4px 10px;
+
+  border: 1px solid #d9efff;
+  border-radius: 999px;
+
+  background: #eff8ff;
+  color: #0086d1;
+
+  font-size: 10px;
+  line-height: 1.2;
+  font-weight: 500;
+
+  white-space: nowrap;
+}
+
+
+/* =========================
+   Card Title
+========================= */
+
+.tech-card h3 {
+  margin: 0 0 7px;
+
+  color: #172033;
+
+  font-size: 16px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+
+/* =========================
+   Description
+========================= */
+
+.tech-description {
+  margin: 0;
+
+  color: #718096;
+
+  font-size: 11px;
+  line-height: 1.55;
+
+  min-height: 52px;
+}
+
+
+/* =========================
+   Card Details
+========================= */
+
+.tech-details {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  margin-top: auto;
+  margin-bottom: 10px;
+  padding-top: 10px;
+
+  border-top: 1px solid #edf1f5;
+}
+
+.tech-details > span:first-child {
+  padding: 4px 8px;
+
+  border-radius: 4px;
+
+  background: #f4f7fa;
+  color: #536276;
+
+  font-size: 9px;
+  line-height: 1.2;
+}
+
+.tech-details > span:nth-child(2) {
+  margin-left: auto;
+  margin-right: 12px;
+
+  color: #718096;
+
+  font-size: 9px;
+  line-height: 1.2;
+}
+
+
+/* =========================
+   Rating
+========================= */
+
+.tech-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 10px;
+  line-height: 1;
+}
+
+.stars {
+  color: #f6b51f;
+
+  font-size: 11px;
+  line-height: 1;
+}
+
+
+/* =========================
+   Add To Stack Button
+========================= */
+
+.add-stack-button {
+  width: 100%;
+
+  padding: 8px 12px;
+
+  border: none;
+  border-radius: 6px;
+
+  background: #080d1b;
+  color: #ffffff;
+
+  font-size: 11px;
+  line-height: 1.3;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.add-stack-button:hover {
+  background: #151b2b;
+}
+
+
+/* =========================
+   Tablet
+========================= */
+
+@media (max-width: 1000px) {
   .header {
     padding: 0 30px;
   }
 
   .navigation {
-    gap: 15px;
+    gap: 18px;
   }
 
   .banner {
     padding: 60px 30px;
+    gap: 30px;
   }
 
   .banner-content h1 {
@@ -232,6 +492,14 @@ input {
     width: 350px;
     height: 250px;
   }
+
+  .technology-section {
+    padding: 50px 30px 60px;
+  }
+
+  .technology-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 
@@ -241,44 +509,68 @@ input {
 
 @media (max-width: 700px) {
   .header {
-    height: auto;
     min-height: 70px;
-    padding: 15px 20px;
+    height: auto;
+    padding: 14px 20px;
 
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 14px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .logo span:first-child {
+    font-size: 22px;
   }
 
   .navigation {
     width: 100%;
+
     order: 3;
 
     justify-content: center;
     flex-wrap: wrap;
-    gap: 15px;
+
+    gap: 12px 18px;
+  }
+
+  .navigation-link {
+    font-size: 13px;
   }
 
   .auth-buttons {
-    gap: 5px;
+    gap: 6px;
   }
 
   .auth-buttons button {
-    padding: 7px 12px;
+    padding: 7px 11px;
+    font-size: 12px;
   }
 
+
+  /* Hero */
+
   .banner {
+    min-height: auto;
     padding: 50px 20px;
 
     flex-direction: column;
+
     text-align: center;
   }
 
+  .banner-content {
+    max-width: 100%;
+  }
+
   .banner-content h1 {
-    font-size: 38px;
+    font-size: 37px;
   }
 
   .banner-content p {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .banner-buttons {
@@ -286,8 +578,247 @@ input {
     flex-wrap: wrap;
   }
 
+  .banner-buttons button {
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+
   .banner-image {
     width: 100%;
     max-width: 430px;
+    height: 250px;
   }
+
+
+  /* Technology */
+
+  .technology-section {
+    padding: 42px 20px 55px;
+  }
+
+  .section-heading {
+    margin-bottom: 25px;
+  }
+
+  .section-heading h2 {
+    font-size: 27px;
+  }
+
+  .section-heading p {
+    font-size: 13px;
+  }
+
+  .technology-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+
+/* =========================
+   Small Mobile
+========================= */
+
+@media (max-width: 400px) {
+  .header {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .banner {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .banner-content h1 {
+    font-size: 32px;
+  }
+
+  .technology-section {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .tech-card {
+    padding: 15px;
+  }
+
+  .tech-card h3 {
+    font-size: 15px;
+  }
+}
+/* =========================
+   Technology Layout
+========================= */
+
+.technology-layout {
+  max-width: 1170px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+
+  gap: 25px;
+
+  align-items: start;
+}
+
+.technology-grid {
+  max-width: none;
+  margin: 0;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 17px;
+}
+
+
+/* =========================
+   Stack Sidebar
+========================= */
+
+.stack {
+  padding: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #e7edf4;
+  border-radius: 14px;
+
+  box-shadow: 0 2px 7px rgba(15, 23, 42, 0.025);
+}
+
+.stack h2 {
+  margin-bottom: 5px;
+
+  color: #172033;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.stack-subtitle {
+  margin-bottom: 14px;
+
+  color: #9aa6b6;
+
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.empty-stack {
+  min-height: 85px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px dashed #dce4ed;
+  border-radius: 11px;
+
+  background: #ffffff;
+}
+
+.empty-stack p {
+  color: #9aa6b6;
+  font-size: 10px;
+}
+
+
+/* =========================
+   Loading
+========================= */
+
+.loading-message {
+  text-align: center;
+  color: #718096;
+  font-size: 14px;
+}
+
+
+/* =========================
+   Stack Responsive
+========================= */
+
+@media (max-width: 1000px) {
+  .technology-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .stack {
+    width: 100%;
+  }
+
+  .technology-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .technology-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================
+   Selected Stack
+========================= */
+
+.stack-items {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.stack-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 8px;
+
+  border: 1px solid #edf1f5;
+  border-radius: 8px;
+
+  background: #ffffff;
+}
+
+.stack-item-icon {
+  width: 25px;
+  height: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+}
+
+.stack-item-info {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stack-item-info strong {
+  color: #172033;
+  font-size: 10px;
+}
+
+.stack-item-info span {
+  color: #8a96a7;
+  font-size: 8px;
+}
+
+.add-stack-button.added {
+  background: #e9edf2;
+  color: #6b7280;
+
+  cursor: not-allowed;
+}
+
+.add-stack-button.added:hover {
+  background: #e9edf2;
 }
