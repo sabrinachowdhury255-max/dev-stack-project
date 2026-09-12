@@ -259,13 +259,27 @@ input {
 
 
 /* =========================
+   Technology Layout
+========================= */
+
+.technology-layout {
+  max-width: 1170px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+
+  gap: 25px;
+
+  align-items: start;
+}
+
+
+/* =========================
    Technology Grid
 ========================= */
 
 .technology-grid {
-  max-width: 1170px;
-  margin: 0 auto;
-
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 
@@ -357,7 +371,7 @@ input {
 
 
 /* =========================
-   Description
+   Card Description
 ========================= */
 
 .tech-description {
@@ -458,11 +472,244 @@ input {
 
   cursor: pointer;
 
-  transition: background 0.2s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
 .add-stack-button:hover {
   background: #151b2b;
+}
+
+.add-stack-button:active {
+  transform: scale(0.99);
+}
+
+.add-stack-button.added {
+  background: #e9edf2;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+.add-stack-button.added:hover {
+  background: #e9edf2;
+}
+
+
+/* =========================
+   Stack Sidebar
+========================= */
+
+.stack {
+  padding: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #e7edf4;
+  border-radius: 14px;
+
+  box-shadow: 0 2px 7px rgba(15, 23, 42, 0.025);
+}
+
+.stack-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.stack h2 {
+  margin-bottom: 5px;
+
+  color: #172033;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.stack-subtitle {
+  margin-bottom: 0;
+
+  color: #9aa6b6;
+
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+
+/* =========================
+   Empty Stack
+========================= */
+
+.empty-stack {
+  min-height: 85px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px dashed #dce4ed;
+  border-radius: 11px;
+
+  background: #ffffff;
+}
+
+.empty-stack p {
+  color: #9aa6b6;
+  font-size: 10px;
+}
+
+
+/* =========================
+   Stack Items
+========================= */
+
+.stack-items {
+  display: flex;
+  flex-direction: column;
+
+  gap: 9px;
+}
+
+.stack-item {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 7px;
+  padding-right: 24px;
+
+  border: 1px solid #edf1f5;
+  border-radius: 8px;
+
+  background: #ffffff;
+}
+
+.stack-item-icon {
+  width: 25px;
+  height: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+}
+
+.stack-item-info {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.stack-item-info strong {
+  color: #172033;
+
+  font-size: 10px;
+  line-height: 1.2;
+}
+
+.stack-item-info span {
+  color: #8a96a7;
+
+  font-size: 8px;
+  line-height: 1.2;
+}
+
+
+/* =========================
+   Remove Buttons
+========================= */
+
+.remove-button {
+  position: absolute;
+  top: 50%;
+  right: 7px;
+
+  width: 17px;
+  height: 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: translateY(-50%);
+
+  border: none;
+  background: transparent;
+
+  color: #9aa6b6;
+
+  font-size: 15px;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.remove-button:hover {
+  color: #ef4444;
+}
+
+.remove-all-button {
+  padding: 4px 7px;
+
+  border: none;
+  border-radius: 4px;
+
+  background: #fff1f2;
+  color: #ef4444;
+
+  font-size: 8px;
+  cursor: pointer;
+}
+
+.remove-all-button:hover {
+  background: #ffe4e6;
+}
+
+
+/* =========================
+   Loading State
+========================= */
+
+.loading-message {
+  min-height: 240px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  color: #718096;
+
+  font-size: 13px;
+}
+
+.loading-spinner {
+  width: 28px;
+  height: 28px;
+
+  border: 3px solid #edf1f5;
+  border-top-color: #f97316;
+
+  border-radius: 50%;
+
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 
@@ -471,6 +718,7 @@ input {
 ========================= */
 
 @media (max-width: 1000px) {
+
   .header {
     padding: 0 30px;
   }
@@ -484,8 +732,16 @@ input {
     gap: 30px;
   }
 
+  .banner-content {
+    max-width: 500px;
+  }
+
   .banner-content h1 {
     font-size: 42px;
+  }
+
+  .banner-content p {
+    font-size: 15px;
   }
 
   .banner-image {
@@ -497,8 +753,17 @@ input {
     padding: 50px 30px 60px;
   }
 
+  .technology-layout {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
   .technology-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stack {
+    width: 100%;
   }
 }
 
@@ -508,6 +773,7 @@ input {
 ========================= */
 
 @media (max-width: 700px) {
+
   .header {
     min-height: 70px;
     height: auto;
@@ -554,6 +820,7 @@ input {
 
   .banner {
     min-height: auto;
+
     padding: 50px 20px;
 
     flex-direction: column;
@@ -608,9 +875,21 @@ input {
     font-size: 13px;
   }
 
+  .technology-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
   .technology-grid {
     grid-template-columns: 1fr;
     gap: 15px;
+  }
+
+
+  /* Stack */
+
+  .stack {
+    width: 100%;
   }
 }
 
@@ -620,6 +899,7 @@ input {
 ========================= */
 
 @media (max-width: 400px) {
+
   .header {
     padding-left: 15px;
     padding-right: 15px;
@@ -646,272 +926,9 @@ input {
   .tech-card h3 {
     font-size: 15px;
   }
-}
-/* =========================
-   Technology Layout
-========================= */
 
-.technology-layout {
-  max-width: 1170px;
-  margin: 0 auto;
-
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 220px;
-
-  gap: 25px;
-
-  align-items: start;
-}
-
-.technology-grid {
-  max-width: none;
-  margin: 0;
-
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 17px;
-}
-
-
-/* =========================
-   Stack Sidebar
-========================= */
-
-.stack {
-  padding: 18px;
-
-  background: #ffffff;
-
-  border: 1px solid #e7edf4;
-  border-radius: 14px;
-
-  box-shadow: 0 2px 7px rgba(15, 23, 42, 0.025);
-}
-
-.stack h2 {
-  margin-bottom: 5px;
-
-  color: #172033;
-
-  font-size: 16px;
-  font-weight: 700;
-}
-
-.stack-subtitle {
-  margin-bottom: 14px;
-
-  color: #9aa6b6;
-
-  font-size: 10px;
-  line-height: 1.5;
-}
-
-.empty-stack {
-  min-height: 85px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border: 1px dashed #dce4ed;
-  border-radius: 11px;
-
-  background: #ffffff;
-}
-
-.empty-stack p {
-  color: #9aa6b6;
-  font-size: 10px;
-}
-
-
-/* =========================
-   Loading
-========================= */
-
-.loading-message {
-  text-align: center;
-  color: #718096;
-  font-size: 14px;
-}
-
-
-/* =========================
-   Stack Responsive
-========================= */
-
-@media (max-width: 1000px) {
-  .technology-layout {
-    grid-template-columns: 1fr;
+  .tech-badge {
+    padding: 4px 8px;
+    font-size: 9px;
   }
-
-  .stack {
-    width: 100%;
-  }
-
-  .technology-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 700px) {
-  .technology-grid {
-    grid-template-columns: 1fr;
-  }
-}
-/* =========================
-   Selected Stack
-========================= */
-
-.stack-items {
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-}
-
-.stack-item {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-
-  padding: 8px;
-
-  border: 1px solid #edf1f5;
-  border-radius: 8px;
-
-  background: #ffffff;
-}
-
-.stack-item-icon {
-  width: 25px;
-  height: 25px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 18px;
-}
-
-.stack-item-info {
-  min-width: 0;
-
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.stack-item-info strong {
-  color: #172033;
-  font-size: 10px;
-}
-
-.stack-item-info span {
-  color: #8a96a7;
-  font-size: 8px;
-}
-
-.add-stack-button.added {
-  background: #e9edf2;
-  color: #6b7280;
-
-  cursor: not-allowed;
-}
-
-.add-stack-button.added:hover {
-  background: #e9edf2;
-}
-/* =========================
-   Stack Header
-========================= */
-
-.stack-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-
-  gap: 10px;
-  margin-bottom: 14px;
-}
-
-.stack-header h2 {
-  margin-bottom: 5px;
-}
-
-
-/* =========================
-   Remove All
-========================= */
-
-.remove-all-button {
-  padding: 4px 7px;
-
-  border: none;
-  border-radius: 4px;
-
-  background: #fff1f2;
-  color: #ef4444;
-
-  font-size: 8px;
-  cursor: pointer;
-}
-
-.remove-all-button:hover {
-  background: #ffe4e6;
-}
-
-
-/* =========================
-   Stack Item
-========================= */
-
-.stack-item {
-  position: relative;
-
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  padding: 8px 7px;
-  padding-right: 24px;
-
-  border: 1px solid #edf1f5;
-  border-radius: 8px;
-
-  background: #ffffff;
-}
-
-
-/* =========================
-   Remove Button
-========================= */
-
-.remove-button {
-  position: absolute;
-  top: 50%;
-  right: 7px;
-
-  width: 17px;
-  height: 17px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  transform: translateY(-50%);
-
-  border: none;
-  background: transparent;
-
-  color: #9aa6b6;
-
-  font-size: 15px;
-  line-height: 1;
-
-  cursor: pointer;
-}
-
-.remove-button:hover {
-  color: #ef4444;
 }

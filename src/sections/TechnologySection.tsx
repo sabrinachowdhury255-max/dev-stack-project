@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
+
 import type { Technology } from "../types";
 import TechCard from "../components/TechCard";
 import Stack from "../components/Stack";
@@ -16,6 +18,10 @@ function TechnologySection() {
       .then((data: Technology[]) => {
         setTechnologies(data);
         setLoading(false);
+      })
+      .catch(() => {
+        setLoading(false);
+        toast.error("Failed to load technologies.");
       });
   }, []);
 
@@ -25,6 +31,7 @@ function TechnologySection() {
     );
 
     if (alreadyAdded) {
+      toast.warning(`${technology.name} is already in your stack.`);
       return;
     }
 
@@ -32,18 +39,30 @@ function TechnologySection() {
       ...selectedTechnologies,
       technology,
     ]);
+
+    toast.success(`${technology.name} added to your stack.`);
   }
 
   function handleRemove(id: number) {
+    const technology = selectedTechnologies.find(
+      (item) => item.id === id
+    );
+
     setSelectedTechnologies(
       selectedTechnologies.filter(
-        (technology) => technology.id !== id
+        (item) => item.id !== id
       )
     );
+
+    if (technology) {
+      toast.info(`${technology.name} removed from your stack.`);
+    }
   }
 
   function handleRemoveAll() {
     setSelectedTechnologies([]);
+
+    toast.info("All technologies removed from your stack.");
   }
 
   return (
@@ -58,9 +77,10 @@ function TechnologySection() {
       </div>
 
       {loading ? (
-        <p className="loading-message">
-          Loading technologies...
-        </p>
+        <div className="loading-message">
+          <div className="loading-spinner"></div>
+          <p>Loading technologies...</p>
+        </div>
       ) : (
         <div className="technology-layout">
           <div className="technology-grid">
