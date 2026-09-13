@@ -12,11 +12,10 @@ function Stack({
   onRemoveAll,
 }: StackProps) {
   return (
-    <aside className="stack">
+    <aside className="stack" id="stack">
       <div className="stack-header">
         <div>
           <h2>Your Stack</h2>
-
           <p className="stack-subtitle">
             {selectedTechnologies.length} technologies selected.
           </p>
@@ -39,12 +38,12 @@ function Stack({
       ) : (
         <div className="stack-items">
           {selectedTechnologies.map((technology) => (
-            <div
-              className="stack-item"
-              key={technology.id}
-            >
+            <div className="stack-item" key={technology.id}>
               <span className="stack-item-icon">
-                {technology.icon}
+                <img
+                  src={technology.icon}
+                  alt={`${technology.name} logo`}
+                />
               </span>
 
               <div className="stack-item-info">
