@@ -52,8 +52,7 @@ function Footer() {
         <div className="footer-column">
           <h3>Legal</h3>
 
-          <a href="#privacy">Privacy</a>
-          <a href="#terms">Terms</a>
+          <a href="#privacy">Privacy & Terms</a>
         </div>
       </div>
 
@@ -61,8 +60,7 @@ function Footer() {
         <p>© 2026 Dev Stack. All rights reserved.</p>
 
         <div className="footer-bottom-links">
-          <a href="#privacy">Privacy</a>
-          <a href="#terms">Terms</a>
+          <a href="#privacy">Privacy & Terms</a>
         </div>
       </div>
     </footer>
