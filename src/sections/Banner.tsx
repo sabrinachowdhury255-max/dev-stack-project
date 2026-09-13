@@ -1,3 +1,5 @@
+import heroImage from "../assets/hero-stack.png";
+
 function Banner() {
   return (
     <section className="banner" id="home">
@@ -24,9 +26,10 @@ function Banner() {
       </div>
 
       <div className="banner-image">
-        <div className="code-box">
-          &lt;Dev Stack /&gt;
-        </div>
+        <img
+          src={heroImage}
+          alt="Dev Stack illustration"
+        />
       </div>
     </section>
   );

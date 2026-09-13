@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 type NavLinkProps = {
   text: string;
   href: string;
@@ -12,6 +14,8 @@ function NavLink({ text, href }: NavLinkProps) {
 }
 
 function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const navigationLinks = [
     { text: "Home", href: "#home" },
     { text: "Technologies", href: "#technologies" },
@@ -22,12 +26,20 @@ function Header() {
 
   return (
     <header className="header">
-      <div className="logo">
+      <button
+        className="menu-button"
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Toggle navigation menu"
+      >
+        ☰
+      </button>
+
+      <a className="logo" href="#home">
         <span>&lt;/&gt;</span>
         <span>Dev Stack</span>
-      </div>
+      </a>
 
-      <nav className="navigation">
+      <nav className={`navigation ${menuOpen ? "open" : ""}`}>
         {navigationLinks.map((link) => (
           <NavLink
             key={link.href}

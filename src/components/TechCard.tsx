@@ -15,7 +15,10 @@ function TechCard({
     <article className="tech-card">
       <div className="tech-card-header">
         <div className="tech-logo">
-          {technology.icon}
+          <img
+            src={technology.icon}
+            alt={`${technology.name} logo`}
+          />
         </div>
 
         {technology.badge && (
@@ -43,9 +46,7 @@ function TechCard({
       </div>
 
       <button
-        className={`add-stack-button ${
-          isAdded ? "added" : ""
-        }`}
+        className={`add-stack-button ${isAdded ? "added" : ""}`}
         onClick={() => onAdd(technology)}
         disabled={isAdded}
       >

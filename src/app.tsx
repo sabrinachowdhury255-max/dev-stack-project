@@ -1,8 +1,7 @@
 import Header from "./components/Header";
 import Banner from "./sections/Banner";
 import TechnologySection from "./sections/TechnologySection";
-import Footer from "./components/footer";
-
+import Footer from "./components/Footer";
 function App() {
   return (
     <>
